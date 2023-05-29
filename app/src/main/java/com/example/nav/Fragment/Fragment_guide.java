@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,6 +24,12 @@ public class Fragment_guide extends Fragment {
     private String val = ""; // val 변수 선언 및 초기화
 
     private TextView resultTextView;
+    //버튼 위치
+    private Button earthquakeButton;
+    private Button typhoonButton;
+
+    private DataBaseHelper dbHelper;
+    private SQLiteDatabase db;
 
     @Nullable
     @Override
@@ -31,34 +38,64 @@ public class Fragment_guide extends Fragment {
         view = inflater.inflate(R.layout.frag_guide, container, false);
 
         resultTextView = view.findViewById(R.id.result_textview);
+        earthquakeButton = view.findViewById(R.id.button_earthquake);
+        typhoonButton = view.findViewById(R.id.button_typhoon);
 
-        getVal();
+        dbHelper = new DataBaseHelper(getContext());
+        db = dbHelper.getReadableDatabase();
+
+        earthquakeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getearthquakeData();
+            }
+        });
+
+        typhoonButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gettyphoonData();
+            }
+        });
+
         return view;
     }
 
-    public void getVal() {
-        DataBaseHelper dbHelper = new DataBaseHelper(getContext());
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        Cursor cursor = db.rawQuery("SELECT * FROM social", null);
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // dbHelper와 db 리소스 정리
+        if (dbHelper != null) {
+            dbHelper.close();
+        }
+        if (db != null) {
+            db.close();
+        }
+    }
+    public void getearthquakeData() {
+        Cursor cursor = db.rawQuery("SELECT earthquake FROM natural", null);
 
         StringBuilder resultData = new StringBuilder();
-        int numColumns = cursor.getColumnCount();
         while (cursor.moveToNext()) {
-            for (int i = 0; i < numColumns; i++) {
-                String columnName = cursor.getColumnName(i);
-                String columnData = cursor.getString(i);
-                resultData.append(columnName).append(": ").append(columnData).append("\n");
-            }
-            resultData.append("\n");
+            String earthquakeData = cursor.getString(cursor.getColumnIndexOrThrow("earthquake"));
+            resultData.append("Earthquake Data: ").append(earthquakeData).append("\n");
         }
 
         cursor.close();
-        dbHelper.close();
+        resultTextView.setText(resultData.toString());
+    }
 
+    public void gettyphoonData() {
+        Cursor cursor = db.rawQuery("SELECT typhoon FROM natural", null);
+
+        StringBuilder resultData = new StringBuilder();
+        while (cursor.moveToNext()) {
+            String typhoonData = cursor.getString(cursor.getColumnIndexOrThrow("typhoon"));
+            resultData.append("Typhoon Data: ").append(typhoonData).append("\n");
+        }
+
+        cursor.close();
         resultTextView.setText(resultData.toString());
     }
 
 }
-
-
