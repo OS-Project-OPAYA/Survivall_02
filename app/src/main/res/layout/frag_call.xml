@@ -1,15 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
-
+    <!-- 집 버튼 -->
     <Button
         android:id="@+id/home_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="집"
-        />
+        android:text="집" />
 
+    <!-- 엄마 버튼 -->
+    <Button
+        android:id="@+id/mom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="엄마" />
+
+    <!-- 아빠 버튼 -->
+    <Button
+        android:id="@+id/dad_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아빠" />
+
+    <!-- 민우 버튼 -->
+    <Button
+        android:id="@+id/minwoo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="민우" />
+
+    <!-- 동현 버튼 -->
+    <Button
+        android:id="@+id/donghyun_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동현" />
+
+    <!-- 진영 버튼 -->
+    <Button
+        android:id="@+id/jinyoung_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="진영" />
 
 </LinearLayout>
