@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,7 @@ public class Fragment_guide extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView");
         view = inflater.inflate(R.layout.frag_guide, container, false);
+
         resultTextView = view.findViewById(R.id.result_textview);
 
         getVal();
@@ -35,23 +37,26 @@ public class Fragment_guide extends Fragment {
     }
 
     public void getVal() {
-
         DataBaseHelper dbHelper = new DataBaseHelper(getContext());
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM social",null);
-        //" and name = ?",new String[]{"홍길동"});
-        while (cursor.moveToNext())
-        {
-            val += cursor.getString(2)+", ";
+        Cursor cursor = db.rawQuery("SELECT * FROM social", null);
 
+        StringBuilder resultData = new StringBuilder();
+        int numColumns = cursor.getColumnCount();
+        while (cursor.moveToNext()) {
+            for (int i = 0; i < numColumns; i++) {
+                String columnName = cursor.getColumnName(i);
+                String columnData = cursor.getString(i);
+                resultData.append(columnName).append(": ").append(columnData).append("\n");
+            }
+            resultData.append("\n");
         }
 
-        //sqlresult.setText("결과: "+ val);
         cursor.close();
         dbHelper.close();
 
-        resultTextView.setText("결과: " + val);
+        resultTextView.setText(resultData.toString());
     }
 
 }
