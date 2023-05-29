@@ -12,12 +12,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nav.R;
 
-import net.daum.android.map.MapView;
 
 public class Fragment_shelter extends Fragment {
     private View view;
     private String TAG = "프래그먼트";
-    private MapView mapView;
 
     @Nullable
     @Override
@@ -27,6 +25,6 @@ public class Fragment_shelter extends Fragment {
         return view;
     }
 
-    
+
 
 }
