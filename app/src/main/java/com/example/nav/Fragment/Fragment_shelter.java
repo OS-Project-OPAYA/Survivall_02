@@ -12,18 +12,21 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nav.R;
 
-public class Fragment_shelter extends Fragment {
+import net.daum.android.map.MapView;
 
+public class Fragment_shelter extends Fragment {
     private View view;
     private String TAG = "프래그먼트";
+    private MapView mapView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView");
         view = inflater.inflate(R.layout.frag_shelter, container, false);
-
-
         return view;
     }
+
+    
+
 }
