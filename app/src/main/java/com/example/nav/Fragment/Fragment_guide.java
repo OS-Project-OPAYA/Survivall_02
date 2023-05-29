@@ -54,7 +54,6 @@ public class Fragment_guide extends Fragment {
         resultTextView = view.findViewById(R.id.result_textview);
 
 
-
         //버튼버튼버튼버튼
         earthquakeButton = view.findViewById(R.id.button_earthquake);
         typhoonButton = view.findViewById(R.id.button_typhoon);
