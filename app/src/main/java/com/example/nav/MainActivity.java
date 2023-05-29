@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.nav_view);
 
 
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, new Fragment_home()).commit();
 
         //바텀 네비게이션뷰 안의 아이템 설정
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
