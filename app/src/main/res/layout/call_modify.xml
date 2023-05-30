@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+
+    <!-- 메시지 작성 창 -->
+    <EditText
+        android:id="@+id/contact1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:ems="20"
+        android:hint="연락처1 수정."/>
+    <EditText
+        android:id="@+id/contact2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:ems="20"
+        android:hint="연락처2 수정"/>
+    <EditText
+        android:id="@+id/contact3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:ems="20"
+        android:hint="연락처3 수정"/>
+    <EditText
+        android:id="@+id/contact4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:ems="20"
+        android:hint="연락처4 수정"/>
+    <EditText
+        android:id="@+id/contact5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:ems="20"
+        android:hint="연락처5 수정."/>
+    <EditText
+        android:id="@+id/contact6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:ems="20"
+        android:hint="연락처6 수정"/>
+
+        <Button
+            android:id="@+id/modifyupdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="확인" />
+
+</LinearLayout>
