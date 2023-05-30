@@ -8,17 +8,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.nav.CallModify;
 import com.example.nav.R;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Fragment_call extends Fragment {
 
     private View view;
     private String TAG = "프래그먼트";
+
+    private Map<String, String> contactMap; // Map to store contact names and phone numbers
 
     @Nullable
     @Override
@@ -26,12 +34,20 @@ public class Fragment_call extends Fragment {
         Log.i(TAG, "onCreateView");
         view = inflater.inflate(R.layout.frag_call, container, false);
 
+        // Initialize the contact map
+        contactMap = new HashMap<>();
+        contactMap.put("home", "12345");
+        contactMap.put("mom", "11111");
+        contactMap.put("dad", "22222");
+        contactMap.put("minwoo", "33333");
+        contactMap.put("donghyun", "44444");
+        contactMap.put("jinyoung", "55555");
+
         Button homeButton = view.findViewById(R.id.home_button);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "12345";
-                dialPhoneNumber(phoneNumber);
+                dialPhoneNumber(contactMap.get("home"));
             }
         });
 
@@ -39,8 +55,7 @@ public class Fragment_call extends Fragment {
         momButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "11111"; // 엄마 전화번호 입력
-                dialPhoneNumber(phoneNumber);
+                dialPhoneNumber(contactMap.get("mom"));
             }
         });
 
@@ -48,8 +63,7 @@ public class Fragment_call extends Fragment {
         dadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "22222"; // 아빠 전화번호 입력
-                dialPhoneNumber(phoneNumber);
+                dialPhoneNumber(contactMap.get("dad"));
             }
         });
 
@@ -57,8 +71,7 @@ public class Fragment_call extends Fragment {
         minwooButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "33333"; // 민우 전화번호 입력
-                dialPhoneNumber(phoneNumber);
+                dialPhoneNumber(contactMap.get("minwoo"));
             }
         });
 
@@ -66,8 +79,7 @@ public class Fragment_call extends Fragment {
         donghyunButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "44444"; // 동현 전화번호 입력
-                dialPhoneNumber(phoneNumber);
+                dialPhoneNumber(contactMap.get("donghyun"));
             }
         });
 
@@ -75,8 +87,26 @@ public class Fragment_call extends Fragment {
         jinyoungButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "55555"; // 진영 전화번호 입력
-                dialPhoneNumber(phoneNumber);
+                dialPhoneNumber(contactMap.get("jinyoung"));
+            }
+        });
+
+        Button modifyButton = view.findViewById(R.id.modify);
+        modifyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEditContactsActivity();
+            }
+        });
+
+        Button sendButton = view.findViewById(R.id.send_button);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = ((EditText) view.findViewById(R.id.title_et)).getText().toString();
+                for (Map.Entry<String, String> entry : contactMap.entrySet()) {
+                    sendMessage(entry.getValue(), message);
+                }
             }
         });
 
@@ -89,5 +119,13 @@ public class Fragment_call extends Fragment {
         startActivity(dialIntent);
     }
 
-    
+    private void sendMessage(String phoneNumber, String message) {
+        // Implement your logic to send the message to the given phone number
+    }
+
+    private void openEditContactsActivity() {
+        Intent intent = new Intent(getActivity(), CallModify.class);
+        intent.putExtra("contactMap", (Serializable) contactMap);
+        startActivity(intent);
+    }
 }
