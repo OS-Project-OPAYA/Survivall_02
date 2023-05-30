@@ -84,6 +84,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getearthquakeData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -92,6 +93,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 gettyphoonData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -100,6 +102,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getfloodData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -108,6 +111,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 gethotData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -116,6 +120,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getgaleData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -124,6 +129,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getcoldData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -132,6 +138,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getdustData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -140,6 +147,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getlandslideData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -148,6 +156,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getvolcanoData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -156,6 +165,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getfireData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -164,6 +174,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getcollapseData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -172,6 +183,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 gettrafficaccidentData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -180,6 +192,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getexplosionData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -188,6 +201,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 gettrainData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -196,6 +210,7 @@ public class Fragment_guide extends Fragment {
             public void onClick(View v) {
                 getconcertData();
                 Popup();
+                resultTextView.setText("");
             }
         });
 
@@ -216,19 +231,6 @@ public class Fragment_guide extends Fragment {
         dialog.show();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -246,11 +248,12 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String earthquakeData = cursor.getString(cursor.getColumnIndexOrThrow("earthquake"));
-            resultData.append("Earthquake Data: ").append(earthquakeData).append("\n");
+            resultData.append(earthquakeData).append("\n");
         }
 
         cursor.close();
         resultTextView.setText(resultData.toString());
+
     }
 
     public void gettyphoonData() {
@@ -259,7 +262,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String typhoonData = cursor.getString(cursor.getColumnIndexOrThrow("typhoon"));
-            resultData.append("Typhoon Data: ").append(typhoonData).append("\n");
+            resultData.append(typhoonData).append("\n");
         }
 
         cursor.close();
@@ -272,7 +275,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String floodData = cursor.getString(cursor.getColumnIndexOrThrow("flood"));
-            resultData.append("flood Data: ").append(floodData).append("\n");
+            resultData.append(floodData).append("\n");
         }
 
         cursor.close();
@@ -285,7 +288,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String hotData = cursor.getString(cursor.getColumnIndexOrThrow("hot"));
-            resultData.append("hot Data: ").append(hotData).append("\n");
+            resultData.append(hotData).append("\n");
         }
 
         cursor.close();
@@ -298,7 +301,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String galeData = cursor.getString(cursor.getColumnIndexOrThrow("gale"));
-            resultData.append("gale Data: ").append(galeData).append("\n");
+            resultData.append(galeData).append("\n");
         }
 
         cursor.close();
@@ -311,7 +314,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String coldData = cursor.getString(cursor.getColumnIndexOrThrow("cold"));
-            resultData.append("gale Data: ").append(coldData).append("\n");
+            resultData.append(coldData).append("\n");
         }
 
         cursor.close();
@@ -324,7 +327,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String dustData = cursor.getString(cursor.getColumnIndexOrThrow("dust"));
-            resultData.append("gale Data: ").append(dustData).append("\n");
+            resultData.append(dustData).append("\n");
         }
 
         cursor.close();
@@ -337,7 +340,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String landslideData = cursor.getString(cursor.getColumnIndexOrThrow("landslide"));
-            resultData.append("gale Data: ").append(landslideData).append("\n");
+            resultData.append(landslideData).append("\n");
         }
 
         cursor.close();
@@ -350,7 +353,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String volcanoData = cursor.getString(cursor.getColumnIndexOrThrow("volcano"));
-            resultData.append("volcano Data: ").append(volcanoData).append("\n");
+            resultData.append(volcanoData).append("\n");
         }
 
         cursor.close();
@@ -363,7 +366,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String fireData = cursor.getString(cursor.getColumnIndexOrThrow("fire"));
-            resultData.append("volcano Data: ").append(fireData).append("\n");
+            resultData.append(fireData).append("\n");
         }
 
         cursor.close();
@@ -376,7 +379,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String collapseData = cursor.getString(cursor.getColumnIndexOrThrow("collapse"));
-            resultData.append("volcano Data: ").append(collapseData).append("\n");
+            resultData.append(collapseData).append("\n");
         }
 
         cursor.close();
@@ -389,7 +392,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String trafficaccidentData = cursor.getString(cursor.getColumnIndexOrThrow("trafficaccident"));
-            resultData.append("volcano Data: ").append(trafficaccidentData).append("\n");
+            resultData.append(trafficaccidentData).append("\n");
         }
 
         cursor.close();
@@ -402,7 +405,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String explosionData = cursor.getString(cursor.getColumnIndexOrThrow("explosion"));
-            resultData.append("volcano Data: ").append(explosionData).append("\n");
+            resultData.append(explosionData).append("\n");
         }
 
         cursor.close();
@@ -415,7 +418,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String trainData = cursor.getString(cursor.getColumnIndexOrThrow("train"));
-            resultData.append("train Data: ").append(trainData).append("\n");
+            resultData.append(trainData).append("\n");
         }
 
         cursor.close();
@@ -428,7 +431,7 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String concertData = cursor.getString(cursor.getColumnIndexOrThrow("concert"));
-            resultData.append("volcano Data: ").append(concertData).append("\n");
+            resultData.append(concertData).append("\n");
         }
 
         cursor.close();
