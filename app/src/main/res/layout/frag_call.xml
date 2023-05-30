@@ -1,64 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFD400">
 
-    <!-- 전화 걸기 버튼 레이아웃 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/home_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="연락처1" />
-
-        <Button
-            android:id="@+id/mom_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="연락처2" />
-
-        <Button
-            android:id="@+id/dad_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="연락처3" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/minwoo_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="연락처4" />
-
-        <Button
-            android:id="@+id/donghyun_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="연락처5" />
-
-        <Button
-            android:id="@+id/jinyoung_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="연락처6" />
-
-    </LinearLayout>
 
     <!-- 메시지 작성 창 -->
     <EditText
@@ -68,12 +14,13 @@
         android:layout_weight="0.5"
         android:background="#eeeeee"
         android:hint="문자를 입력하세요."
+        android:layout_margin="30dp"
         android:padding="16dp" />
 
     <!-- 전송 버튼 및 연락처 수정 버튼 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="250dp"
         android:orientation="vertical">
 
 
@@ -82,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-
+            android:layout_marginLef="30dp"
             android:text="메시지 전송" />
 
         <Button
@@ -91,6 +38,62 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="연락처 수정" />
+        <!-- 전화 걸기 버튼 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/home_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="연락처1 전화" />
+
+            <Button
+                android:id="@+id/mom_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="연락처2 전화" />
+
+            <Button
+                android:id="@+id/dad_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="연락처3 전화" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/minwoo_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="연락처4 전화" />
+
+            <Button
+                android:id="@+id/donghyun_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="연락처5 전화" />
+
+            <Button
+                android:id="@+id/jinyoung_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="연락처6 전화" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

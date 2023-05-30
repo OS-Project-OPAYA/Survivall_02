@@ -19,6 +19,23 @@
         android:textSize="50dp"
         android:textStyle="bold" />
 
+    <RelativeLayout
+        android:id="@+id/searchbar"
+        android:layout_width="308dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/searchbar">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        </SearchView>
+
+
+    </RelativeLayout>
+
 
 
 
