@@ -1,5 +1,7 @@
 package com.example.nav.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -81,6 +83,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getearthquakeData();
+                Popup();
             }
         });
 
@@ -88,6 +91,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 gettyphoonData();
+                Popup();
             }
         });
 
@@ -95,6 +99,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getfloodData();
+                Popup();
             }
         });
 
@@ -102,6 +107,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 gethotData();
+                Popup();
             }
         });
 
@@ -109,6 +115,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getgaleData();
+                Popup();
             }
         });
 
@@ -116,6 +123,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getcoldData();
+                Popup();
             }
         });
 
@@ -123,6 +131,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getdustData();
+                Popup();
             }
         });
 
@@ -130,6 +139,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getlandslideData();
+                Popup();
             }
         });
 
@@ -137,6 +147,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getvolcanoData();
+                Popup();
             }
         });
 
@@ -144,6 +155,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getfireData();
+                Popup();
             }
         });
 
@@ -151,6 +163,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getcollapseData();
+                Popup();
             }
         });
 
@@ -158,6 +171,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 gettrafficaccidentData();
+                Popup();
             }
         });
 
@@ -165,6 +179,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getexplosionData();
+                Popup();
             }
         });
 
@@ -172,6 +187,7 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 gettrainData();
+                Popup();
             }
         });
 
@@ -179,11 +195,37 @@ public class Fragment_guide extends Fragment {
             @Override
             public void onClick(View v) {
                 getconcertData();
+                Popup();
             }
         });
 
         return view;
     }
+
+    public void Popup() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("행동 가이드");
+        builder.setMessage(resultTextView.getText().toString());
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -392,7 +434,6 @@ public class Fragment_guide extends Fragment {
         cursor.close();
         resultTextView.setText(resultData.toString());
     }
-
 
 
 }
