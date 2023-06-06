@@ -44,25 +44,25 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/home_button"
+                android:id="@+id/c1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="연락처1 전화" />
+                 />
 
             <Button
-                android:id="@+id/mom_button"
+                android:id="@+id/c2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="연락처2 전화" />
+               />
 
             <Button
-                android:id="@+id/dad_button"
+                android:id="@+id/c3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="연락처3 전화" />
+                />
 
         </LinearLayout>
 
@@ -72,25 +72,25 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/minwoo_button"
+                android:id="@+id/c4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="연락처4 전화" />
+                 />
 
             <Button
-                android:id="@+id/donghyun_button"
+                android:id="@+id/c5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="연락처5 전화" />
+  />
 
             <Button
-                android:id="@+id/jinyoung_button"
+                android:id="@+id/c6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="연락처6 전화" />
+ />
 
         </LinearLayout>
 
