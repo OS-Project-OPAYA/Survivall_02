@@ -1,6 +1,7 @@
 package com.example.nav.Fragment;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -12,6 +13,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseHelper extends SQLiteOpenHelper{
     private final static String TAG = "DataBaseHelper"; // Logcat에 출력할 태그이름
@@ -92,4 +95,48 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             Log.d("dbCopy","IOException 발생함");
         }
     }
+
+    public List<String> searchData(String query) {
+        List<String> results = new ArrayList<>();
+
+        SQLiteDatabase database = getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            String[] tables = {"natural", "social"};
+
+            for (String table : tables) {
+                String selection = null;
+                String[] selectionArgs = null;
+
+                cursor = database.query(table, null, selection, selectionArgs, null, null, null);
+                addResultsToList(cursor, results);
+            }
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            database.close();
+        }
+
+        return results;
+    }
+
+
+
+
+    private void addResultsToList(Cursor cursor, List<String> results) {
+        if (cursor != null && cursor.moveToFirst()) {
+            int columnCount = cursor.getColumnCount();
+            do {
+                for (int i = 0; i < columnCount; i++) {
+                    String result = cursor.getString(i);
+                    results.add(result);
+                }
+            } while (cursor.moveToNext());
+        }
+    }
+
+
+
+
 }

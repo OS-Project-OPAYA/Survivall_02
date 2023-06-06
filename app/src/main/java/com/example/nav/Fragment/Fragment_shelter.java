@@ -25,6 +25,4 @@ public class Fragment_shelter extends Fragment {
         return view;
     }
 
-
-
 }
