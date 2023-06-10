@@ -17,8 +17,6 @@ import com.example.nav.Fragment.DataBaseHelper;
 
 import java.util.List;
 
-
-
 public class SearchActivity extends AppCompatActivity {
 
     private ListView listView;

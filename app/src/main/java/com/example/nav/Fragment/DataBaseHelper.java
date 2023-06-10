@@ -111,7 +111,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 cursor = database.query(table, null, selection, selectionArgs, null, null, null);
                 addResultsToList(cursor, results);
             }
-
         } finally {
             if (cursor != null) {
                 cursor.close();
