@@ -31,14 +31,19 @@
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
             android:layout_gravity="center_horizontal"
-            android:text="메시지 전송" />
+            android:text="메시지 전송"
+            android:textSize="20dp"
+            android:layout_marginBottom="20dp"/>
 
         <Button
             android:id="@+id/modify"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="right"
-            android:text="연락처 수정" />
+            android:text="연락처 수정"
+            android:textSize="20dp"
+            android:background="@drawable/buttonshape"
+            android:layout_marginBottom="20dp"/>
         <!-- 전화 걸기 버튼 레이아웃 -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,20 +53,29 @@
             <Button
                 android:id="@+id/c1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:background="@drawable/buttonshape"
+                android:layout_marginBottom="5dp"/>
 
             <Button
                 android:id="@+id/c2"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:background="@drawable/buttonshape"
+                android:layout_marginBottom="5dp"/>
 
             <Button
                 android:id="@+id/c3"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:background="@drawable/buttonshape"
+                android:layout_marginBottom="5dp"/>
 
         </LinearLayout>
 
@@ -73,20 +87,27 @@
             <Button
                 android:id="@+id/c4"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:background="@drawable/buttonshape"
+                />
 
             <Button
                 android:id="@+id/c5"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:background="@drawable/buttonshape" />
 
             <Button
                 android:id="@+id/c6"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:background="@drawable/buttonshape" />
 
         </LinearLayout>
 
