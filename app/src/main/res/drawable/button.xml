@@ -1,0 +1,15 @@
+<!-- drawable/button.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="138dp"
+    android:height="60dp"
+    android:viewportWidth="138"
+    android:viewportHeight="60"
+    >
+    <group>
+        <clip-path
+            android:pathData="M0 0H138V60H0V0Z"
+            />
+    </group>
+</vector>

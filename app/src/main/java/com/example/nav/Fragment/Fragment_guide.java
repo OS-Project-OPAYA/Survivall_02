@@ -296,7 +296,7 @@ public class Fragment_guide extends Fragment {
     }
 
     public void getgaleData() {
-        Cursor cursor = db.rawQuery("SELECT hot FROM natural", null);
+        Cursor cursor = db.rawQuery("SELECT gale FROM natural", null);
 
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
