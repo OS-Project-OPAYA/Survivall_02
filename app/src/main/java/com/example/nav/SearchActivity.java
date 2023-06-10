@@ -4,13 +4,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.nav.Fragment.DataBaseHelper;
@@ -19,8 +15,6 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private ListView listView;
-    private ArrayAdapter<String> adapter;
     private DataBaseHelper dbHelper;
 
     public static void startActivity(Context context, String query) {
@@ -33,9 +27,6 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        listView = new ListView(this);
-        setContentView(listView);
-
         dbHelper = new DataBaseHelper(this);
 
         String query = getIntent().getStringExtra("query");
@@ -43,6 +34,7 @@ public class SearchActivity extends AppCompatActivity {
             performSearch(query);
         } else {
             Toast.makeText(this, "No query specified", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 
@@ -51,9 +43,24 @@ public class SearchActivity extends AppCompatActivity {
 
         if (searchResults.isEmpty()) {
             Toast.makeText(this, "No results found", Toast.LENGTH_SHORT).show();
+            finish();
         } else {
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, searchResults);
-            listView.setAdapter(adapter);
+            StringBuilder message = new StringBuilder();
+            for (String result : searchResults) {
+                message.append(result).append("\n");
+            }
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Search Results")
+                    .setMessage(message.toString())
+                    .setPositiveButton("Close", (dialog, which) -> finish());
+
+            AlertDialog dialog = builder.create();
+
+            // 팝업창의 배경색을 설정
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.popup_background)));
+
+            dialog.show();
         }
     }
 }

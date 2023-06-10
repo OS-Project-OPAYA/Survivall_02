@@ -105,11 +105,12 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             String[] tables = {"natural", "social"};
 
             for (String table : tables) {
+                String[] columns = null; // 모든 열을 대상으로 검색
                 String selection = null;
                 String[] selectionArgs = null;
 
-                cursor = database.query(table, null, selection, selectionArgs, null, null, null);
-                addResultsToList(cursor, results);
+                cursor = database.query(table, columns, selection, selectionArgs, null, null, null);
+                addResultsToList(cursor, results, query);
             }
         } finally {
             if (cursor != null) {
@@ -124,17 +125,20 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
 
 
-    private void addResultsToList(Cursor cursor, List<String> results) {
+    private void addResultsToList(Cursor cursor, List<String> results, String query) {
         if (cursor != null && cursor.moveToFirst()) {
             int columnCount = cursor.getColumnCount();
             do {
                 for (int i = 0; i < columnCount; i++) {
                     String result = cursor.getString(i);
-                    results.add(result);
+                    if (result != null && result.contains(query)) {
+                        results.add(result);
+                    }
                 }
             } while (cursor.moveToNext());
         }
     }
+
 
 
 
