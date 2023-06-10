@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class Fragment_home extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView");
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         view = inflater.inflate(R.layout.frag_home, container, false);
 
         searchView = view.findViewById(R.id.searchbar).findViewById(R.id.searchview);

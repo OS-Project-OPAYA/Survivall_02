@@ -42,7 +42,7 @@ public class SearchActivity extends AppCompatActivity {
         List<String> searchResults = dbHelper.searchData(query);
 
         if (searchResults.isEmpty()) {
-            Toast.makeText(this, "No results found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "검색결과가 없습니다", Toast.LENGTH_SHORT).show();
             finish();
         } else {
             StringBuilder message = new StringBuilder();
@@ -51,9 +51,9 @@ public class SearchActivity extends AppCompatActivity {
             }
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Search Results")
+            builder.setTitle("행동 가이드")
                     .setMessage(message.toString())
-                    .setPositiveButton("Close", (dialog, which) -> finish());
+                    .setPositiveButton("확인", (dialog, which) -> finish());
 
             AlertDialog dialog = builder.create();
 
