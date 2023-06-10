@@ -131,13 +131,14 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             do {
                 for (int i = 0; i < columnCount; i++) {
                     String result = cursor.getString(i);
-                    if (result != null && result.contains(query)) {
+                    if (result != null && result.contains(query) && !result.equalsIgnoreCase("null")) {
                         results.add(result);
                     }
                 }
             } while (cursor.moveToNext());
         }
     }
+
 
 
 

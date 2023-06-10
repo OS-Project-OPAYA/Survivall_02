@@ -248,7 +248,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String earthquakeData = cursor.getString(cursor.getColumnIndexOrThrow("earthquake"));
-            resultData.append(earthquakeData).append("\n");
+            if (earthquakeData != null) {
+                resultData.append(earthquakeData).append("\n");
+            }
         }
 
         cursor.close();
@@ -262,7 +264,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String typhoonData = cursor.getString(cursor.getColumnIndexOrThrow("typhoon"));
-            resultData.append(typhoonData).append("\n");
+            if (typhoonData != null) {
+                resultData.append(typhoonData).append("\n");
+            }
         }
 
         cursor.close();
@@ -275,7 +279,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String floodData = cursor.getString(cursor.getColumnIndexOrThrow("flood"));
-            resultData.append(floodData).append("\n");
+            if (floodData != null) {
+                resultData.append(floodData).append("\n");
+            }
         }
 
         cursor.close();
@@ -288,7 +294,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String hotData = cursor.getString(cursor.getColumnIndexOrThrow("hot"));
-            resultData.append(hotData).append("\n");
+            if (hotData != null) {
+                resultData.append(hotData).append("\n");
+            }
         }
 
         cursor.close();
@@ -301,7 +309,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String galeData = cursor.getString(cursor.getColumnIndexOrThrow("gale"));
-            resultData.append(galeData).append("\n");
+            if (galeData != null) {
+                resultData.append(galeData).append("\n");
+            }
         }
 
         cursor.close();
@@ -314,7 +324,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String coldData = cursor.getString(cursor.getColumnIndexOrThrow("cold"));
-            resultData.append(coldData).append("\n");
+            if (coldData != null) {
+                resultData.append(coldData).append("\n");
+            }
         }
 
         cursor.close();
@@ -327,7 +339,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String dustData = cursor.getString(cursor.getColumnIndexOrThrow("dust"));
-            resultData.append(dustData).append("\n");
+            if (dustData != null) {
+                resultData.append(dustData).append("\n");
+            }
         }
 
         cursor.close();
@@ -340,7 +354,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String landslideData = cursor.getString(cursor.getColumnIndexOrThrow("landslide"));
-            resultData.append(landslideData).append("\n");
+            if (landslideData != null) {
+                resultData.append(landslideData).append("\n");
+            }
         }
 
         cursor.close();
@@ -353,7 +369,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String volcanoData = cursor.getString(cursor.getColumnIndexOrThrow("volcano"));
-            resultData.append(volcanoData).append("\n");
+            if (volcanoData != null) {
+                resultData.append(volcanoData).append("\n");
+            }
         }
 
         cursor.close();
@@ -366,7 +384,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String fireData = cursor.getString(cursor.getColumnIndexOrThrow("fire"));
-            resultData.append(fireData).append("\n");
+            if (fireData != null) {
+                resultData.append(fireData).append("\n");
+            }
         }
 
         cursor.close();
@@ -379,7 +399,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String collapseData = cursor.getString(cursor.getColumnIndexOrThrow("collapse"));
-            resultData.append(collapseData).append("\n");
+            if (collapseData != null) {
+                resultData.append(collapseData).append("\n");
+            }
         }
 
         cursor.close();
@@ -392,7 +414,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String trafficaccidentData = cursor.getString(cursor.getColumnIndexOrThrow("trafficaccident"));
-            resultData.append(trafficaccidentData).append("\n");
+            if (trafficaccidentData != null) {
+                resultData.append(trafficaccidentData).append("\n");
+            }
         }
 
         cursor.close();
@@ -405,7 +429,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String explosionData = cursor.getString(cursor.getColumnIndexOrThrow("explosion"));
-            resultData.append(explosionData).append("\n");
+            if (explosionData != null) {
+                resultData.append(explosionData).append("\n");
+            }
         }
 
         cursor.close();
@@ -418,7 +444,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String trainData = cursor.getString(cursor.getColumnIndexOrThrow("train"));
-            resultData.append(trainData).append("\n");
+            if (trainData != null) {
+                resultData.append(trainData).append("\n");
+            }
         }
 
         cursor.close();
@@ -431,7 +459,9 @@ public class Fragment_guide extends Fragment {
         StringBuilder resultData = new StringBuilder();
         while (cursor.moveToNext()) {
             String concertData = cursor.getString(cursor.getColumnIndexOrThrow("concert"));
-            resultData.append(concertData).append("\n");
+            if (concertData != null) {
+                resultData.append(concertData).append("\n");
+            }
         }
 
         cursor.close();
