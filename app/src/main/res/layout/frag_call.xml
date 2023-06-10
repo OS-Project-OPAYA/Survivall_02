@@ -19,16 +19,18 @@
 
     <!-- 전송 버튼 및 연락처 수정 버튼 -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="344dp"
         android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
         android:orientation="vertical">
 
 
         <Button
             android:id="@+id/send_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonshape"
+            android:layout_gravity="center_horizontal"
             android:text="메시지 전송" />
 
         <Button
@@ -47,22 +49,19 @@
                 android:id="@+id/c1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                 />
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/c2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-               />
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/c3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
 
         </LinearLayout>
 
@@ -75,22 +74,19 @@
                 android:id="@+id/c4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                 />
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/c5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-  />
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/c6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
- />
+                android:layout_weight="1" />
 
         </LinearLayout>
 
