@@ -6,6 +6,7 @@
     android:clipToOutline="true"
     android:background="#FFD400">
 
+
     <!-- logo -->
     <TextView
         android:id="@+id/Logo"

@@ -20,6 +20,7 @@ public class Fragment_home extends Fragment {
     private String TAG = "프래그먼트";
     private SearchView searchView;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
